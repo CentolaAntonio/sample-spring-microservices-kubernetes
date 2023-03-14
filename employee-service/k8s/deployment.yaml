@@ -17,6 +17,7 @@ spec:
       containers:
       - name: employee
         image: piomin/employee
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
         env:
