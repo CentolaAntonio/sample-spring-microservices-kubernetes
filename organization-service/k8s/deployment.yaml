@@ -17,6 +17,7 @@ spec:
       containers:
       - name: organization
         image: piomin/organization
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
         env:
