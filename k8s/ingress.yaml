@@ -6,8 +6,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   defaultBackend:
-    service.name: default-http-backend
-    service.port.number: 80
+    service:
+      name: default-http-backend
+      port:
+        number: 80
   rules:
   - host: microservices.info
     http:
@@ -15,15 +17,21 @@ spec:
       - path: /employee
         pathType: ImplementationSpecific
         backend:
-          service.name: employee
-          service.port.number: 8080
+          service:
+            name: employee
+            port:
+              number: 8080
       - path: /department
         pathType: ImplementationSpecific
         backend:
-          service.name: department
-          service.port.number: 8080
+          service:
+            name: department
+            port:
+              number: 8080
       - path: /organization
         pathType: ImplementationSpecific
         backend:
-          service.name: organization
-          service.port.number: 8080
+          service:
+            name: organization
+            port:
+              number: 8080
